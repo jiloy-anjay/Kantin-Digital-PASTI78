@@ -172,7 +172,7 @@ export default function AdminOrderManager() {
                   </div>
                   {order.notes && (
                     <div className="text-amber-800 text-[11px] font-medium mt-1">
-                      📝 Catatan: "{order.notes}"
+                      📝 Catatan: &quot;{order.notes}&quot;
                     </div>
                   )}
                 </div>

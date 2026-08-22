@@ -149,9 +149,9 @@ export default function GuidePage() {
               <span className="sticker-badge sticker-num-8">8</span>
               <Radio className="w-4 h-4 text-slate-400" />
             </div>
-            <h3 className="text-sm font-bold text-slate-900 font-heading">Live Status Tracker & Voice TTS</h3>
+            <h3 className="text-sm font-bold text-slate-900 font-heading">Live Status Tracker &amp; Voice TTS</h3>
             <p className="text-xs text-slate-500 leading-relaxed">
-              Progress stepper (Diterima -> Dimasak -> Siap Diambil) dan suara otomatis yang memberitahu saat pesanan siap diambil.
+              Progress stepper (Diterima &rarr; Dimasak &rarr; Siap Diambil) dan suara otomatis yang memberitahu saat pesanan siap diambil.
             </p>
           </div>
 
