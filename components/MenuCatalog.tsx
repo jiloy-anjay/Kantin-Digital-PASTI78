@@ -7,6 +7,13 @@ import { useSpeech } from '@/hooks/useSpeech';
 import { Search, Plus, Minus, Flame, Check, Ban, Sparkles } from 'lucide-react';
 import * as Tabs from '@radix-ui/react-tabs';
 
+// Fallback images per kategori — URL yang terbukti selalu load
+const FALLBACK_IMAGES: Record<string, string> = {
+  makanan: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=600&q=80',
+  minuman: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&q=80',
+  snack:   'https://images.unsplash.com/photo-1496116218417-1a781b1c416c?w=600&q=80',
+};
+
 export default function MenuCatalog({
   menus,
   selectedStall,
@@ -140,12 +147,12 @@ export default function MenuCatalog({
                 {/* Image & Badges */}
                 <div className="relative h-40 w-full bg-slate-100 overflow-hidden">
                   <img
-                    src={item.image || 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400'}
+                    src={item.image || FALLBACK_IMAGES[item.category] || FALLBACK_IMAGES.makanan}
                     alt={item.name}
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.onerror = null;
-                      target.src = `https://picsum.photos/seed/${item.id}/600/400`;
+                      target.src = FALLBACK_IMAGES[item.category] || FALLBACK_IMAGES.makanan;
                     }}
                     className={`w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 ${
                       isSoldOut ? 'grayscale contrast-75' : ''
