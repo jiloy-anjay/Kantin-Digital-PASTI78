@@ -2,12 +2,17 @@ import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { INITIAL_MENUS } from '@/lib/mock-data';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
   try {
+    if (!prisma) {
+      return NextResponse.json(INITIAL_MENUS);
+    }
     const menus = await prisma.menuItem.findMany({
       orderBy: { createdAt: 'asc' },
     });
-    return NextResponse.json(menus);
+    return NextResponse.json(menus.length > 0 ? menus : INITIAL_MENUS);
   } catch (error) {
     return NextResponse.json(INITIAL_MENUS);
   }

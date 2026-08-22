@@ -2,8 +2,13 @@ import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { INITIAL_ORDERS } from '@/lib/mock-data';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
   try {
+    if (!prisma) {
+      return NextResponse.json(INITIAL_ORDERS);
+    }
     const orders = await prisma.order.findMany({
       include: {
         orderItems: {
@@ -19,9 +24,8 @@ export async function GET() {
       },
     });
 
-    return NextResponse.json(orders);
+    return NextResponse.json(orders.length > 0 ? orders : INITIAL_ORDERS);
   } catch (error) {
-    // Fallback to mock data if database is uninitialized
     return NextResponse.json(INITIAL_ORDERS);
   }
 }
