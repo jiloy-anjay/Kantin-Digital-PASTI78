@@ -177,7 +177,7 @@ export const INITIAL_MENUS: MenuItem[] = [
     originalPrice: 13000,
     isAvailable: false, // Out of stock demo
     isBestSeller: false,
-    image: 'https://images.pexels.com/photos/2116094/pexels-photo-2116094.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/images/menu-204.jpg',
     description: 'Cuanki lidah, tahu bakso, siomay kering, dan kuah jeruk limau cabai pedas. (Stok Habis)',
   },
 
@@ -203,7 +203,7 @@ export const INITIAL_MENUS: MenuItem[] = [
     originalPrice: 12000,
     isAvailable: true,
     isBestSeller: true,
-    image: 'https://images.pexels.com/photos/3679706/pexels-photo-3679706.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/images/menu-302.jpg',
     description: 'Susu segar dingin berpadu sirup gula aren legit dan boba tapioka kenyal empuk.',
   },
   {
@@ -215,7 +215,7 @@ export const INITIAL_MENUS: MenuItem[] = [
     originalPrice: 9000,
     isAvailable: true,
     isBestSeller: false,
-    image: 'https://images.pexels.com/photos/1638280/pexels-photo-1638280.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/images/menu-303.jpg',
     description: 'Minuman matcha asli berpadu susu creamy yang wangi dan menyegarkan.',
   },
   {
@@ -227,7 +227,7 @@ export const INITIAL_MENUS: MenuItem[] = [
     originalPrice: 12000,
     isAvailable: true,
     isBestSeller: false,
-    image: 'https://images.pexels.com/photos/1028714/pexels-photo-1028714.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/images/menu-304.jpg',
     description: 'Alpukat mentega matang dikocok kental manis cokelat dan es serut segar.',
   },
 
@@ -241,7 +241,7 @@ export const INITIAL_MENUS: MenuItem[] = [
     originalPrice: 8000,
     isAvailable: true,
     isBestSeller: true,
-    image: 'https://images.pexels.com/photos/1435735/pexels-photo-1435735.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/images/menu-401.jpg',
     description: 'Kulit risol renyah tepung panir dengan isian daging asap gurih, telur, mayones lumer.',
   },
   {
