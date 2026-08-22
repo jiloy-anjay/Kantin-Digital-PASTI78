@@ -177,7 +177,7 @@ export const INITIAL_MENUS: MenuItem[] = [
     originalPrice: 13000,
     isAvailable: false, // Out of stock demo
     isBestSeller: false,
-    image: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.pexels.com/photos/2116094/pexels-photo-2116094.jpeg?auto=compress&cs=tinysrgb&w=600',
     description: 'Cuanki lidah, tahu bakso, siomay kering, dan kuah jeruk limau cabai pedas. (Stok Habis)',
   },
 
@@ -203,7 +203,7 @@ export const INITIAL_MENUS: MenuItem[] = [
     originalPrice: 12000,
     isAvailable: true,
     isBestSeller: true,
-    image: 'https://images.unsplash.com/photo-1558857563-b37cfbbf276b?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.pexels.com/photos/3679706/pexels-photo-3679706.jpeg?auto=compress&cs=tinysrgb&w=600',
     description: 'Susu segar dingin berpadu sirup gula aren legit dan boba tapioka kenyal empuk.',
   },
   {
@@ -215,7 +215,7 @@ export const INITIAL_MENUS: MenuItem[] = [
     originalPrice: 9000,
     isAvailable: true,
     isBestSeller: false,
-    image: 'https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.pexels.com/photos/1638280/pexels-photo-1638280.jpeg?auto=compress&cs=tinysrgb&w=600',
     description: 'Minuman matcha asli berpadu susu creamy yang wangi dan menyegarkan.',
   },
   {
@@ -227,7 +227,7 @@ export const INITIAL_MENUS: MenuItem[] = [
     originalPrice: 12000,
     isAvailable: true,
     isBestSeller: false,
-    image: 'https://images.unsplash.com/photo-1622597467836-f3e6e75bc037?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.pexels.com/photos/1028714/pexels-photo-1028714.jpeg?auto=compress&cs=tinysrgb&w=600',
     description: 'Alpukat mentega matang dikocok kental manis cokelat dan es serut segar.',
   },
 
@@ -241,7 +241,7 @@ export const INITIAL_MENUS: MenuItem[] = [
     originalPrice: 8000,
     isAvailable: true,
     isBestSeller: true,
-    image: 'https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.pexels.com/photos/1435735/pexels-photo-1435735.jpeg?auto=compress&cs=tinysrgb&w=600',
     description: 'Kulit risol renyah tepung panir dengan isian daging asap gurih, telur, mayones lumer.',
   },
   {
