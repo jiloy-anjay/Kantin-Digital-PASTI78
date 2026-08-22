@@ -87,8 +87,9 @@ export default function CartDrawer() {
     <>
       <Dialog.Root open={isCartOpen} onOpenChange={setIsCartOpen}>
         <Dialog.Portal>
-          <Dialog.Overlay className="radix-dialog-overlay" />
-          <Dialog.Content className="fixed right-0 top-0 bottom-0 w-full max-w-md bg-white p-0 shadow-2xl z-50 flex flex-col focus:outline-none animate-slide-up sm:animate-none">
+          {/* Overlay tipis - tidak menghalangi katalog */}
+          <Dialog.Overlay className="cart-drawer-overlay" />
+          <Dialog.Content className="fixed right-0 top-0 bottom-0 w-full max-w-md bg-white p-0 shadow-2xl z-50 flex flex-col focus:outline-none animate-slide-up">
             
             {/* Header */}
             <div className="p-4 border-b border-slate-100 flex items-center justify-between">
