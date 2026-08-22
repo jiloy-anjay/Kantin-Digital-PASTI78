@@ -1,0 +1,97 @@
+// Prisma Schema for Kantin Digital PASTI78
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id        String   @id @default(uuid())
+  name      String
+  email     String   @unique
+  password  String
+  role      String   @default("STUDENT") // STUDENT | SELLER
+  nisn      String?  @unique
+  balance   Int      @default(75000)
+  avatar    String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  orders    Order[]
+  stalls    Stall[]
+}
+
+model Stall {
+  id          String   @id @default(uuid())
+  name        String
+  description String?
+  sellerId    String
+  image       String?
+  rating      Float    @default(4.9)
+  openTime    String   @default("07:00 - 15:30 WIB")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  seller      User       @relation(fields: [sellerId], references: [id], onDelete: Cascade)
+  menuItems   MenuItem[]
+  orders      Order[]
+}
+
+model MenuItem {
+  id            String   @id @default(uuid())
+  stallId       String
+  name          String
+  description   String?
+  price         Int
+  originalPrice Int?
+  category      String   @default("makanan") // makanan | minuman | snack
+  isAvailable   Boolean  @default(true)
+  isBestSeller  Boolean  @default(false)
+  image         String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  // Relations
+  stall         Stall       @relation(fields: [stallId], references: [id], onDelete: Cascade)
+  orderItems    OrderItem[]
+}
+
+model Order {
+  id            String   @id @default(uuid())
+  orderCode     String   @unique // e.g. ORD-8492
+  userId        String
+  stallId       String
+  totalPrice    Int
+  discount      Int      @default(0)
+  isPreOrder    Boolean  @default(false)
+  pickupTime    String?  // e.g. "Jam Istirahat 1 (09:30 - 10:00 WIB)"
+  paymentMethod String   @default("QRIS") // QRIS | KARTU_PELAJAR | EWALLET
+  notes         String?
+  status        String   @default("PENDING") // PENDING | COOKING | READY | COMPLETED | CANCELLED
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  // Relations
+  user          User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  stall         Stall       @relation(fields: [stallId], references: [id], onDelete: Cascade)
+  orderItems    OrderItem[]
+}
+
+model OrderItem {
+  id         String   @id @default(uuid())
+  orderId    String
+  menuItemId String
+  quantity   Int      @default(1)
+  price      Int
+  createdAt  DateTime @default(now())
+
+  // Relations
+  order      Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  menuItem   MenuItem @relation(fields: [menuItemId], references: [id], onDelete: Cascade)
+}
