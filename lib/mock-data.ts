@@ -277,7 +277,7 @@ export const INITIAL_MENUS: MenuItem[] = [
     originalPrice: 7000,
     isAvailable: true,
     isBestSeller: true,
-    image: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=600&q=80',
+    image: 'https://raw.githubusercontent.com/jiloy-anjay/Kantin-Digital-PASTI78/main/public/images/menu-404.jpg',
     description: 'Kue tradisional nusantara dua lapis: lapisan hijau pandan harum nan lembut & lapisan putih santan kelapa gurih manis. Buatan rumahan Bu Siti.',
   },
 ];
