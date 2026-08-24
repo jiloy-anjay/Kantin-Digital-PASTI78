@@ -268,6 +268,18 @@ export const INITIAL_MENUS: MenuItem[] = [
     image: 'https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?auto=format&fit=crop&w=600&q=80',
     description: 'Roti tebal dipanggang margarin wangi dengan coklat meises melimpah dan taburan keju cheddar.',
   },
+  {
+    id: 'menu-404',
+    stallId: 'stan-4',
+    name: 'Kue Talam Pandan & Kelapa (Isi 3)',
+    category: 'snack',
+    price: 6000,
+    originalPrice: 7000,
+    isAvailable: true,
+    isBestSeller: true,
+    image: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=600&q=80',
+    description: 'Kue tradisional nusantara dua lapis: lapisan hijau pandan harum nan lembut & lapisan putih santan kelapa gurih manis. Buatan rumahan Bu Siti.',
+  },
 ];
 
 export const PREORDER_SLOTS: PreOrderSlot[] = [

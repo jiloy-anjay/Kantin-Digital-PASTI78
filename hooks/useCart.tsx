@@ -73,7 +73,22 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       if (savedOrders) setOrders(JSON.parse(savedOrders));
 
       const savedMenus = localStorage.getItem('pasti78_menus_next');
-      if (savedMenus) setMenus(JSON.parse(savedMenus));
+      if (savedMenus) {
+        try {
+          const parsedMenus: MenuItem[] = JSON.parse(savedMenus);
+          // Merge INITIAL_MENUS with parsedMenus to keep availability toggle while including all new menus
+          const mergedMenus = INITIAL_MENUS.map((item) => {
+            const existing = parsedMenus.find((m) => m.id === item.id);
+            return existing ? { ...item, isAvailable: existing.isAvailable } : item;
+          });
+          setMenus(mergedMenus);
+          localStorage.setItem('pasti78_menus_next', JSON.stringify(mergedMenus));
+        } catch {
+          setMenus(INITIAL_MENUS);
+        }
+      } else {
+        setMenus(INITIAL_MENUS);
+      }
     } catch (e) {
       console.warn('LocalStorage error:', e);
     }
